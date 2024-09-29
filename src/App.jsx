@@ -15,11 +15,9 @@ function App() {
           <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              {/* Add other routes here */}
             </Routes>
             <Routes>
               <Route path="/salary" element={<Salary />} />
-              {/* Add other routes here */}
             </Routes>
           </main>
         </div>

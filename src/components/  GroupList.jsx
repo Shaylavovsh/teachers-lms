@@ -1,4 +1,5 @@
 import GroupCard from "./ GroupCard";
+import TeacherRatingTable from "./TeacherRating";
 
 const GroupList = ({ groupData }) => {
   return (

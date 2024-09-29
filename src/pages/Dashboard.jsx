@@ -1,5 +1,6 @@
 import React from 'react';
 import GroupCard from '../components/ GroupCard';
+import TeacherRatingTable from '../components/TeacherRating';
 
 const Dashboard = () => {
   const groups = [
@@ -26,6 +27,7 @@ const Dashboard = () => {
           <GroupCard key={group.id} group={group} />
         ))}
       </div>
+      <TeacherRatingTable/>
     </div>
   );
 };
