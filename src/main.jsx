@@ -13,7 +13,9 @@ import Attendance from './components/Attandance';
 import Students from './components/coin/Students';
 import MiniSidebardPage from './pages/MiniSidebardPage';
 import Exam from './components/Exam';
-import { CollapsibleSection } from './components/Method';
+import ComponentName, { CollapsibleSection } from './components/Method';
+import Login from './components/Login';
+import Component from './pages/Salary';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
   {
     path: "/dashboard/exam",
     element: <Exam/>
+  },  
+  {
+    path: "/login",
+    element: <Login/>
+  },
+  {
+    path: "/dashboard/methodology",
+    element: <ComponentName/>
   }
 ]);
 

@@ -6,7 +6,7 @@ export function CollapsibleSection({ title, sectionId, children, openSection, to
     <section className="mb-4 rounded-lg bg-white p-4 shadow">
       <div
         className="flex cursor-pointer items-center justify-between"
-        onClick={() => toggleSection(sectionId)}
+        onClick={() => toggleSection(sectionId)} // Ensure this is called correctly
         aria-expanded={openSection === sectionId}
       >
         <h2 className="text-xl font-semibold text-orange-500">{title}</h2>
@@ -21,11 +21,12 @@ export function CollapsibleSection({ title, sectionId, children, openSection, to
   );
 }
 
-export default function Component() {
+export default function ComponentName() {
   const [openSection, setOpenSection] = useState(null);
 
+  // Toggle the section open/close
   const toggleSection = (section) => {
-    setOpenSection(openSection === section ? null : section);
+    setOpenSection(openSection === section ? null : section); // Toggle section open/close logic
   };
 
   return (
@@ -55,7 +56,7 @@ export default function Component() {
           title="Methodology"
           sectionId="methodology"
           openSection={openSection}
-          toggleSection={toggleSection}
+          toggleSection={toggleSection} // Ensure toggleSection is passed correctly
         >
           <p>Methodology content goes here...</p>
         </CollapsibleSection>
@@ -64,7 +65,7 @@ export default function Component() {
           title="Homework"
           sectionId="homework"
           openSection={openSection}
-          toggleSection={toggleSection}
+          toggleSection={toggleSection} // Ensure toggleSection is passed correctly
         >
           <h3 className="mb-2 text-lg font-semibold">JavaScript Kirish</h3>
           <table className="w-full border-collapse">
