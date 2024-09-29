@@ -9,22 +9,37 @@ import {
 import Dashboard from './pages/Dashboard';
 import Salary from './pages/Salary';
 import Projects from './pages/Projects';
-import MiniSidebard from './pages/MiniSidebardPage';
+import Attendance from './components/Attandance';
+import Students from './components/coin/Students';
 import MiniSidebardPage from './pages/MiniSidebardPage';
-
+import Exam from './components/Exam';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
       {
         path: "/",
-        element: <Dashboard/>
+        element: <Dashboard />
       },
       {
         path: "/salary",
-        element: <Salary/>
+        element: <Salary />
       },
+      {
+        path: "/students",
+        element: <Students />
+      }
+    ]
+  },
+  {
+    path: "/admin",
+    element: <MiniSidebardPage />,
+    children: [
+      {
+        path: "attendance/F1-1779",
+        element: <Attendance />
+      }
     ]
   },
   {
@@ -32,14 +47,15 @@ const router = createBrowserRouter([
     element: <h1>Page Not Found</h1>
   },
   {
-    path: "/dashboard",
-    element: <MiniSidebardPage/>,
+    path: "/projects",
+    element: <Projects />
   },
   {
-    path: '/dashboard/projects',
-    element: <Projects/>
+    path: "/dashboard/exam",
+    element: <Exam/>
   }
 ]);
+
 
 ReactDOM.render(
   <React.StrictMode>

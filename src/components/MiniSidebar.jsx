@@ -3,8 +3,7 @@ import { ChevronLeft, Coins, FileText, Book, Users, MessageSquare } from 'lucide
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const menuItems = [
-  { icon: Coins, label: 'Монеты', path: '/dashboard/coins' }, 
-  { icon: FileText, label: 'Проекты', path: '/dashboard/projects' }, // Adjust the path
+  { icon: FileText, label: 'Проекты', path: '/projects' }, // Adjust the path
   { icon: Book, label: 'Методология', path: '/dashboard/methodology' },
   { icon: MessageSquare, label: 'Экзамен', path: '/dashboard/exam' },
 ]

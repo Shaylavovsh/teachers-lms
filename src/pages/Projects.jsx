@@ -63,7 +63,7 @@ const students = [
 export default function Projects() {
   return (
     <>
-    <Navb ar/>
+    <Navbar/>
     <div className="flex h-screen bg-gray-100">
       <div className="w-64 bg-white p-4 shadow-md overflow-y-auto">
         <h2 className="mb-4 text-lg font-semibold bg-red-50 p-2 rounded-md ">
