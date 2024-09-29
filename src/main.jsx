@@ -13,6 +13,7 @@ import Attendance from './components/Attandance';
 import Students from './components/coin/Students';
 import MiniSidebardPage from './pages/MiniSidebardPage';
 import Exam from './components/Exam';
+import { CollapsibleSection } from './components/Method';
 const router = createBrowserRouter([
   {
     path: "/",
