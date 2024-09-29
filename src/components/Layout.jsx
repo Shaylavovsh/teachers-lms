@@ -11,7 +11,7 @@ const Layout = () => {
             </div>
         <div className='flex'>
             <Sidebar/>
-            <div className='bg-white w-full'>
+            <div className='bg-white w-full max-h-screen overflow-x-auto'>
                 <Outlet/>
             </div>
         </div>
