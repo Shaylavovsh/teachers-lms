@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.attendance-page {
+    padding: 20px;
+  }
+  
+  .attendance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .refresh-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .attendance-table th, .attendance-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .attendance-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
