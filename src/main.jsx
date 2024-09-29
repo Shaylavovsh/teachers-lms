@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Dashboard from './pages/Dashboard';
 import Salary from './pages/Salary';
+import Attendance from './components/Attandance';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         path: "/salary",
         element: <Salary/>
       },
+      {
+        path: '/attendance/F1-1779',
+        element: <Attendance/>
+      }
     ]
   },
 ]);
