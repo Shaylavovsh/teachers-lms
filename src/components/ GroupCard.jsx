@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const GroupCard = ({ group }) => {
   return (
@@ -17,9 +18,9 @@ const GroupCard = ({ group }) => {
           <span className="text-gray-600 text-sm">Vaqt</span>
           <span className="text-lg font-semibold">{group.time}</span>
         </div>
-        <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded text-sm">
+        <Link to="/dashboard" className="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded text-sm">
           Tekshirish
-        </button>
+        </Link>
       </div>
     </div>
   );

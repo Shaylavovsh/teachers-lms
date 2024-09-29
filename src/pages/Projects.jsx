@@ -1,5 +1,7 @@
 import React from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import MiniSidebar from "../components/MiniSidebar";
+import Navbar from "../components/Navbar";
 
 const projects = [
   "1. Front-Endga kirish",
@@ -60,6 +62,8 @@ const students = [
 
 export default function Projects() {
   return (
+    <>
+    <Navbar/>
     <div className="flex h-screen bg-gray-100">
       <div className="w-64 bg-white p-4 shadow-md overflow-y-auto">
         <h2 className="mb-4 text-lg font-semibold bg-red-50 p-2 rounded-md ">
@@ -161,5 +165,6 @@ export default function Projects() {
         </footer>
       </div>
     </div>
+    </>
   );
 }

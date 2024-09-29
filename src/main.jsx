@@ -9,6 +9,8 @@ import {
 import Dashboard from './pages/Dashboard';
 import Salary from './pages/Salary';
 import Projects from './pages/Projects';
+import MiniSidebard from './pages/MiniSidebardPage';
+import MiniSidebardPage from './pages/MiniSidebardPage';
 
 const router = createBrowserRouter([
   {
@@ -22,12 +24,24 @@ const router = createBrowserRouter([
       {
         path: "/salary",
         element: <Salary/>
-      },{
-        path: "/projects",
-        element: <Projects/>
       },
     ]
   },
+  {
+    path: "*",
+    element: <h1>Page Not Found</h1>
+  },
+  {
+    path: "/dashboard",
+    element: <MiniSidebardPage/>,
+  },
+  {
+    path: '/dashboard/projects',
+    element: <Projects/>
+  },
+  {
+    path: ''
+  }
 ]);
 
 ReactDOM.render(
