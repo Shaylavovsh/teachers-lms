@@ -1,10 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './components/  Sidebar';
+import Navbar from './components/Navbar';
+import Dashboard from './pages/Dashboard';
+import Salary from './pages/Salary';
 
 function App() {
   return (
-    <div>
-      <h2>Welcome to the App!</h2>
-    </div>
+    <Router>
+      <div className="flex h-screen bg-gray-100">
+        <Sidebar />
+        <div className="flex-1 flex flex-col overflow-hidden">
+          <Navbar />
+          <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              {/* Add other routes here */}
+            </Routes>
+            <Routes>
+              <Route path="/salary" element={<Salary />} />
+              {/* Add other routes here */}
+            </Routes>
+          </main>
+        </div>
+      </div>
+    </Router>
   );
 }
 
