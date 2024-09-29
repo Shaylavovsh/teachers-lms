@@ -72,7 +72,10 @@ const TeacherRatingTable = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-6">O'qituvchi Reytingi</h1>
+     <h2 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+        <span className="w-4 h-4 bg-red-500 rounded-full mr-2"></span>
+        O'qtuvchi rating
+      </h2>
       <table className="min-w-full bg-white shadow-md rounded-lg">
         <thead>
           <tr>
