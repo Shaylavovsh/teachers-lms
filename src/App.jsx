@@ -4,6 +4,7 @@ import Sidebar from './components/  Sidebar';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import Salary from './pages/Salary';
+import Projects from './pages/Projects';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
             </Routes>
             <Routes>
               <Route path="/salary" element={<Salary />} />
+            </Routes>
+            <Routes>
+              <Route path="/projects" element={<Projects />} />
             </Routes>
           </main>
         </div>
