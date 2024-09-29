@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard';
 import Salary from './pages/Salary';
 import Projects from './pages/Projects';
 import Attendance from './components/Attandance';
+import Students from './components/coin/Students';
 
 const router = createBrowserRouter([
   {
@@ -30,9 +31,11 @@ const router = createBrowserRouter([
       {
         path: '/attendance/F1-1779',
         element: <Attendance/>
-      }
-    ]
-  },
+      },
+      {
+        path: "/students",
+        element: <Students/>}
+    ]}
 ]);
 
 ReactDOM.render(
