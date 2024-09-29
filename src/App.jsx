@@ -1,10 +1,12 @@
-import React from 'react';
-import Dashboard from './pages/dashboard/Dashboard';
+import React from "react";
+import CoinPage from "./components/coin/CoinPage";
+import HomePage from "./components/homework/HomePage";
+import Group from "./components/group/Group";
 
 function App() {
   return (
     <div>
-      <Dashboard/>
+      <CoinPage />
     </div>
   );
 }
