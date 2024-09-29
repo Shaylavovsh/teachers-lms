@@ -6,17 +6,16 @@ import { Outlet } from 'react-router-dom'
 const Layout = () => {
   return (
     <div className='w-full h-[100%]'>
-            <div className='shadow-md'>
+            <div className=''>
                 <Navbar/>
             </div>
         <div className='flex'>
             <Sidebar/>
-            <div className='bg-white w-full max-h-screen overflow-x-auto'>
+            <div className='bg-gray-100 w-full max-h-screen overflow-x-auto'>
                 <Outlet/>
             </div>
         </div>
     </div>
-
 
 
 
