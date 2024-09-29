@@ -85,30 +85,44 @@ const studentsData = [
 
 const Students = () => {
   const [students, setStudents] = useState(() => {
-    // Load students from localStorage or use default studentsData
     const savedStudents = localStorage.getItem("students");
     return savedStudents ? JSON.parse(savedStudents) : studentsData;
   });
 
   const [coinLimit, setCoinLimit] = useState(() => {
-    // Load coin limit from localStorage or use default value
     const savedLimit = localStorage.getItem("coinLimit");
     return savedLimit ? JSON.parse(savedLimit) : 500;
   });
 
-  // Effect to save the students data to localStorage whenever it changes
+  const [notification, setNotification] = useState(""); // Для хранения уведомления
+
   useEffect(() => {
     localStorage.setItem("students", JSON.stringify(students));
   }, [students]);
 
-  // Effect to save the coin limit to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("coinLimit", JSON.stringify(coinLimit));
   }, [coinLimit]);
 
+  // Функция для отображения уведомления
+  const showNotification = (message) => {
+    setNotification(message);
+    setTimeout(() => {
+      setNotification(""); // Убрать уведомление через 3 секунды
+    }, 3000);
+  };
+
   const updateCoins = (id, value) => {
+    const student = students.find((s) => s.id === id);
+
+    if (student.lastVisit === "Нет входа в Space") {
+      showNotification(
+        "Этот ученик не может получить монеты, так как нет входа в Space."
+      );
+      return;
+    }
+
     if (coinLimit >= value || value < 0) {
-      // Check if there's enough coins to add
       setStudents((prevStudents) =>
         prevStudents.map((student) =>
           student.id === id
@@ -120,9 +134,9 @@ const Students = () => {
             : student
         )
       );
-      setCoinLimit((prevLimit) => prevLimit - value); // Deduct from coin limit
+      setCoinLimit((prevLimit) => prevLimit - value);
     } else {
-      alert("Not enough coins remaining!");
+      showNotification("Недостаточно монет в лимите!");
     }
   };
 
@@ -131,6 +145,14 @@ const Students = () => {
       <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
         Front-001
       </h1>
+
+      {/* Уведомление */}
+      {notification && (
+        <div className="mb-4 p-4 bg-yellow-100 text-yellow-800 rounded-lg shadow-lg">
+          {notification}
+        </div>
+      )}
+
       <div className="text-right mb-4">
         <span className="text-xl font-semibold">Лимит монет: {coinLimit}</span>
       </div>
