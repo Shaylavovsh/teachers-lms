@@ -11,7 +11,7 @@ import App from './App';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />, // Main layout with Outlet
+    element: <Layout />,
     children: [
       {
         path: '/', // Default route
