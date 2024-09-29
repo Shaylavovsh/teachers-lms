@@ -8,28 +8,55 @@ import {
 } from "react-router-dom";
 import Dashboard from './pages/Dashboard';
 import Salary from './pages/Salary';
+import Projects from './pages/Projects';
 import Attendance from './components/Attandance';
-
+import Students from './components/coin/Students';
+import MiniSidebardPage from './pages/MiniSidebardPage';
+import Exam from './components/Exam';
+import { CollapsibleSection } from './components/Method';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
       {
         path: "/",
-        element: <Dashboard/>
+        element: <Dashboard />
       },
       {
         path: "/salary",
-        element: <Salary/>
+        element: <Salary />
       },
       {
-        path: '/attendance/F1-1779',
-        element: <Attendance/>
+        path: "/students",
+        element: <Students />
       }
     ]
   },
+  {
+    path: "/admin",
+    element: <MiniSidebardPage />,
+    children: [
+      {
+        path: "attendance/F1-1779",
+        element: <Attendance />
+      }
+    ]
+  },
+  {
+    path: "*",
+    element: <h1>Page Not Found</h1>
+  },
+  {
+    path: "/projects",
+    element: <Projects />
+  },
+  {
+    path: "/dashboard/exam",
+    element: <Exam/>
+  }
 ]);
+
 
 ReactDOM.render(
   <React.StrictMode>

@@ -6,17 +6,20 @@ const Attendance = () => {
   const [attendanceData, setAttendanceData] = useState([]);
 
   useEffect(() => {
-    // Fetch data from localStorage (mocked for now)
-    const data = JSON.parse(localStorage.getItem('attendanceData'));
-    if (data && data[groupId]) {
-      setAttendanceData(data[groupId]);
-    } else {
-      setAttendanceData([]); // Empty data if groupId not found
+    // Fetch data from localStorage and ensure proper format
+    try {
+      const storedData = localStorage.getItem('attendanceData');
+      const parsedData = storedData ? JSON.parse(storedData) : null;
+      if (parsedData && parsedData[groupId]) {
+        setAttendanceData(parsedData[groupId]);
+      } else {
+        setAttendanceData([]); // If no data for the specific groupId
+      }
+    } catch (error) {
+      console.error('Failed to parse attendance data from localStorage:', error);
+      setAttendanceData([]); // Set to empty array if error occurs
     }
   }, [groupId]);
-
-  // Debugging to check if the attendance data is fetched correctly
-  console.log('Attendance Data:', JSON.parse(localStorage.getItem('attendanceData')));
 
   return (
     <div>
